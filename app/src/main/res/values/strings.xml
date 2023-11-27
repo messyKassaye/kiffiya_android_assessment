@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Kifiya Assessment</string>
+    <string name="register_label">Register new post</string>
+    <string name="title_label">Post title</string>
+    <string name="body_label">Post body</string>
+    <string name="register_post">Register post</string>
+    <string name="register_post_button_text">Post</string>
+</resources>
