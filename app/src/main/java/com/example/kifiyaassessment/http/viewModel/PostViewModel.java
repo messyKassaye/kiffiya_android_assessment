@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.kifiyaassessment.config.Config;
 import com.example.kifiyaassessment.constants.Constants;
 import com.example.kifiyaassessment.http.repository.PostRepository;
 import com.example.kifiyaassessment.models.Post;
@@ -26,7 +27,7 @@ public class PostViewModel extends AndroidViewModel {
 
     public PostViewModel(@NonNull Application application) {
         super(application);
-        postRepository = new PostRepository(Constants.getApiUrl(application));
+        postRepository = new PostRepository(Config.getApiUrl(application));
     }
 
     public Call<ArrayList<Post>> getPosts(){
