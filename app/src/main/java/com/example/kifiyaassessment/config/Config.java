@@ -16,8 +16,8 @@ public class Config {
         Properties properties = new Properties();
         properties.load(inputStream);
 
-        String apiURL = properties.getProperty(key);
+        String propertyValue = properties.getProperty(key);
         inputStream.close();
-        return  apiURL;
+        return  propertyValue;
     }
 }
