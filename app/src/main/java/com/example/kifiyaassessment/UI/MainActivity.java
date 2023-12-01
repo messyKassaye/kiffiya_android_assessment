@@ -35,12 +35,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(LayoutInflater.from(this));
+        setContentView(binding.getRoot());
+
         ViewModelProvider provider = new ViewModelProvider(this);
         postViewModel = provider.get(PostViewModel.class);
-
-        binding = ActivityMainBinding.inflate(LayoutInflater.from(this));
-
         adapter = new PostAdapter(getBaseContext(), postArrayList);
         binding.postRecyclerview.setLayoutManager(new LinearLayoutManager(getBaseContext(),LinearLayoutManager.VERTICAL,false));
         binding.postRecyclerview.setItemAnimator(new DefaultItemAnimator());
