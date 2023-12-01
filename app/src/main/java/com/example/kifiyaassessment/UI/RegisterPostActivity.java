@@ -12,14 +12,14 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.kifiyaassessment.R;
+import com.example.kifiyaassessment.databinding.ActivityRegisterPostBinding;
 import com.example.kifiyaassessment.http.viewModel.PostViewModel;
 import com.example.kifiyaassessment.models.Post;
 import com.example.kifiyaassessment.utils.ApiResponse;
 
 public class RegisterPostActivity extends AppCompatActivity {
-    EditText title, body;
-    Button registerPost;
     PostViewModel postViewModel;
+    private ActivityRegisterPostBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,15 +29,12 @@ public class RegisterPostActivity extends AppCompatActivity {
         ViewModelProvider provider = new ViewModelProvider(this);
         postViewModel = provider.get(PostViewModel.class);
 
-        title = findViewById(R.id.post_title);
-        body = findViewById(R.id.post_body);
-        registerPost = findViewById(R.id.submit_button);
 
-        registerPost.setOnClickListener(new View.OnClickListener() {
+        binding.submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String titleValue = title.getText().toString();
-                String bodyValue = body.getText().toString();
+                String titleValue = binding.postTitle.getText().toString();
+                String bodyValue = binding.postBody.getText().toString();
 
                 Post post = new Post(1,1,titleValue, bodyValue);
                 storePost(post);

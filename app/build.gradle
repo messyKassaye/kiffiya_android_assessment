@@ -4,7 +4,10 @@ plugins {
 
 android {
     namespace 'com.example.kifiyaassessment'
+    android.buildFeatures.viewBinding = true
+
     compileSdk 34
+
 
     defaultConfig {
         applicationId "com.example.kifiyaassessment"
